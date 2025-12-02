@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>일상생활 속의 역학적 사실</title>
+<style>
+  body { margin:0; padding:0; font-family:Arial,sans-serif; background:#f4f4f4; }
+  header { background:#4CAF50; color:white; padding:20px 0; text-align:center; }
+  header h1 { margin:0; font-size:2.2em; }
+  header p { margin:5px 0 0 0; font-size:1em; opacity:0.9; }
+
+  .container { width:90%; max-width:1200px; margin:30px auto; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .box { background:#e8f0fe; height:180px; border-radius:12px; box-shadow:0 0 15px rgba(0,0,0,0.1); display:flex; flex-direction:column; justify-content:center; align-items:center; font-size:1.2em; text-align:center; cursor:pointer; transition: transform 0.2s, background 0.2s; }
+  .box:hover { transform:translateY(-5px); background:#d0e4ff; }
+
+  .explanation-section { width:90%; max-width:1200px; margin:30px auto; padding:25px; border-radius:14px; background:white; box-shadow:0 0 15px rgba(0,0,0,0.08); margin-bottom:30px; }
+  .explanation-section h2 { color:#4CAF50; border-bottom:2px solid #ddd; padding-bottom:8px; margin-top:0; }
+  .explanation-content { display:none; margin-bottom:20px; }
+  .explanation-content.active { display:block; }
+  section { padding:25px; border:2px solid #bbb; border-radius:14px; background:#fafafa; min-height:200px; margin-bottom:20px; }
+  section:nth-child(even) { background:#ffffff; }
+  ul { line-height:1.7; }
+  input { width:60px; }
+  button { cursor:pointer; border:none; border-radius:6px; padding:5px 10px; background:#4CAF50; color:white; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🔬 일상생활 속의 역학적 사실</h1>
+  <p>버튼을 눌러 각 현상을 살펴보세요</p>
+</header>
+
+<div class="container">
+  <div class="box" onclick="showExplanation('straw')">🥤 빨대 물 마시기</div>
+  <div class="box" onclick="showExplanation('bus')">🚌 버스 급정거</div>
+  <div class="box" onclick="showExplanation('umbrella')">☔ 우산 뒤집힘</div>
+</div>
+
+<div class="explanation-section">
+
+  <!-- 현상 설명 -->
+  <div id="straw" class="explanation-content">
+    <h2>🥤 빨대로 물이 올라가는 이유</h2>
+    <p>빨대를 이용해 액체가 위로 이동하는 과정은 대기압, 압력 차, 그리고 유체 정역학의 원리로 설명된다. 사람이 빨대를 통해 공기를 흡입하면 빨대 내부의 압력은 주변 공기의 대기압보다 낮아지고, 이때 형성되는 압력차 때문에 대기압이 물 표면을 아래로 누르며 물을 빨대 안쪽으로 밀어 올린다.</p>
+    <ul>
+      <li>빨대 내부는 부분적 저압 상태가 되어 외부 대기압과 내부 압력의 차이가 생긴다.</li>
+      <li>대기압은 액체 표면을 지속적으로 누르고 있기 때문에, 상대적으로 낮은 압력을 가진 빨대 내부로 물이 이동한다.</li>
+      <li>유체정역학적으로 보면, 유체는 높은 압력에서 낮은 압력 방향으로 이동하려는 경향이 있으며, 이 원리가 빨대를 통해 명확하게 나타난다.</li>
+      <li>물은 대기압의 크기에 의해 이론적으로 약 10m 이상은 거의 올라갈 수 없으며, 이는 기압의 물기둥 높이 한계와 일치한다.</li>
+    </ul>
+  </div>
+
+  <div id="bus" class="explanation-content">
+    <h2>🚌 급정거 시 몸이 쏠리는 이유</h2>
+    <p>버스가 달리고 있을 때 승객의 몸은 버스와 동일한 속도를 가진다. 그러나 버스가 급정거하면 바닥과 바퀴에 의해 버스는 빠르게 감속하지만, 승객의 몸에는 순간적으로 감속시키는 힘이 충분히 작용하지 않는다. 그 결과 몸은 원래의 운동 상태를 유지하려는 관성에 의해 앞으로 계속 진행하려 한다.</p>
+    <ul>
+      <li>운동 중인 물체는 외력이 작용하지 않는 한 운동 상태를 유지하려고 한다.</li>
+      <li>버스가 멈추는 동안 승객의 상체는 감속을 늦게 받아 관성 방향(앞쪽)으로 움직인다.</li>
+      <li>질량이 클수록 관성도 커지므로, 무거운 사람이나 물체일수록 급정거 시 더 크게 쏠릴 수 있다.</li>
+      <li>이 현상은 힘과 가속도의 관계 f = ma로도 설명할 수 있으며, 버스의 감속이 클수록 승객이 느끼는 관성 효과도 커진다.</li>
+    </ul>
+  </div>
+
+  <div id="umbrella" class="explanation-content">
+    <h2>☔ 우산이 바람에 뒤집히는 이유</h2>
+    <p>강한 바람이 불 때 우산이 뒤집히는 이유는 압력 차와 공기 흐름의 변화 때문이다. 바람이 우산 윗면을 따라 빠르게 흐르면 그 부분의 압력은 낮아지고, 상대적으로 우산의 아래쪽 부분에는 높은 압력이 유지된다. 이 압력 차로 인해 양력이 발생하여 우산을 위쪽으로 밀어 올린다.</p>
+    <ul>
+      <li>공기의 속도가 증가하면 압력이 감소한다는 베르누이의 원리가 적용된다.</li>
+      <li>우산 윗면은 곡률이 있어 공기가 더 빨리 흐르며, 그 결과 낮은 압력이 형성된다.</li>
+      <li>아래쪽의 공기는 상대적으로 속도가 느리므로 높은 압력이 유지된다.</li>
+      <li>이 힘의 불균형으로 인해 우산의 구조물이 양력을 견디지 못하면 뒤집히게 된다.</li>
+      <li>추가로 강풍 자체가 우산 표면에 가하는 항력이 구조물의 변형을 더욱 쉽게 만든다.</li>
+    </ul>
+  </div>
+
+  <!-- 항상 표시되는 영역 -->
+  <section>
+    <h2>핵심 수식 정리</h2>
+    <ul>
+      <li>힘: F = ma</li>
+      <li>압력: P = F / A</li>
+      <li>운동에너지: E = 1/2 mv²</li>
+      <li>베르누이 방정식: 속도 ↑ → 압력 ↓</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>간단 시뮬레이션</h2>
+    <p>질량과 가속도를 입력하면 힘 계산과 막대그래프가 동시에 업데이트됩니다.</p>
+    <label>질량 (kg): <input id="massInput" type="number" value="2"></label>
+    <label style="margin-left:20px;">가속도 (m/s²): <input id="accInput" type="number" value="3"></label>
+    <button onclick="updateSimulation()">계산 & 그래프</button>
+    <p id="simResult" style="font-weight:bold; margin-top:10px;"></p>
+    <canvas id="simChart" width="400" height="200" style="margin-top:20px;"></canvas>
+  </section>
+
+  <section>
+    <h2>용어 정리</h2>
+    <ul>
+      <li>관성: 물체가 원래의 운동 상태 유지</li>
+      <li>압력: 단위 면적에 작용하는 힘</li>
+      <li>양력: 속도 차로 생기는 위쪽 힘</li>
+      <li>항력: 유체가 물체 운동을 방해하는 힘</li>
+    </ul>
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+function showExplanation(id) {
+  document.querySelectorAll('.explanation-content').forEach(el => el.classList.remove('active'));
+  const target = document.getElementById(id);
+  if(target) target.classList.add('active');
+}
+
+// 시뮬레이션 + 막대그래프
+let simChart;
+function updateSimulation() {
+  const m = Number(document.getElementById('massInput').value);
+  const a = Number(document.getElementById('accInput').value);
+  const F = m*a;
+  document.getElementById('simResult').textContent = `힘: ${F} N`;
+
+  const labels = ['질량', '가속도', '힘'];
+  const values = [m, a, F];
+
+  const ctx = document.getElementById('simChart');
+  if(simChart){
+    simChart.data.labels = labels;
+    simChart.data.datasets[0].data = values;
+    simChart.update();
+  } else {
+    simChart = new Chart(ctx,{
+      type:'bar',
+      data:{
+        labels: labels,
+        datasets:[{
+          label:'시뮬레이션 결과',
+          data: values,
+          backgroundColor:['#4CAF50','#FF9800','#2196F3']
+        }]
+      },
+      options:{
+        scales:{
+          y:{ beginAtZero:true, title:{display:true, text:'값'} },
+          x:{ title:{display:true, text:'항목'}}
+        }
+      }
+    });
+  }
+}
+</script>
+
+</body>
+</html>
